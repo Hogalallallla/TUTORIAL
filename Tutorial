@@ -1,0 +1,86 @@
+--About--
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Tutorial", HidePremium = false, IntroText = "Loading tutorial script...", SaveConfig = true, ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "Welcome",
+	Content = "Welcome to tutorial tab domt forgot to watch tutorial",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+--Tabs--
+
+local Tab = Window:MakeTab({
+	Name = "Tutorial tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--Section--
+
+local Section = Tab:AddSection({
+	Name = "Tutorial section"
+})
+
+--Buttons and others--
+
+Tab:AddButton({
+	Name = "Button",
+	Callback = function()
+      		print("SUBSCRIBE FOR SCRIPT")
+  	end    
+})
+Tab:AddToggle({
+	Name = "Toggle",
+	Default = false,
+	Callback = function(Value)
+		print(SUBSCRIBE)
+	end    
+})
+Tab:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 20,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Tutorial",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+Tab:AddDropdown({
+	Name = "Dropdown",
+	Default = "1",
+	Options = {"1", "2"},
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+Tab:AddTextbox({
+	Name = "Textbox",
+	Default = "default box input",
+	TextDisappear = true,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+Tab:AddBind({
+	Name = "Bind",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		print("press")
+	end    
+})
+Tab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(SUBSCRIBE)
+	end	  
+})
+
+--Main--
+
+OrionLib:Init()
